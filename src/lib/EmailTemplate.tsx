@@ -39,7 +39,7 @@ export default function WelcomeEmailTemplate({
           fontStyle="normal"
         />
       </Head>
-      <Preview>Welcome to RayzrSole - Your AI journey begins!</Preview>
+      <Preview>Welcome to RayzrSole - Your automation journey begins!</Preview>
 
       <Body style={{
         backgroundColor: '#f8fafc',
@@ -73,7 +73,7 @@ export default function WelcomeEmailTemplate({
               margin: '0',
               lineHeight: '1.5'
             }}>
-              Your AI journey begins soon...
+              Your automation journey begins soon...
             </Text>
           </Section>
 
@@ -123,7 +123,7 @@ export default function WelcomeEmailTemplate({
               textAlign: 'center'
             }}>
               Thank you for your interest in RayzrSole! We're building the next generation of
-              AI & ML solutions to transform industries. We're thrilled to have you on board.
+              automation solutions to transform industries. We're thrilled to have you on board.
             </Text>
 
             {/* Features Section */}
@@ -150,7 +150,7 @@ export default function WelcomeEmailTemplate({
                   color: '#475569',
                   margin: '0 0 8px 0'
                 }}>
-                  🤖 Cutting-edge AI & ML solutions for your business
+                  🤖 Cutting-edge automation solutions for your business
                 </Text>
                 <Text style={{
                   fontSize: '15px',
@@ -166,7 +166,7 @@ export default function WelcomeEmailTemplate({
                   color: '#475569',
                   margin: '0 0 8px 0'
                 }}>
-                  ⚡ Industry-specific AI models and integrations
+                  ⚡ Industry-specific automation integrations
                 </Text>
                 <Text style={{
                   fontSize: '15px',
@@ -174,7 +174,7 @@ export default function WelcomeEmailTemplate({
                   color: '#475569',
                   margin: '0'
                 }}>
-                  🤝 Dedicated support from our expert AI team
+                  🤝 Dedicated support from our expert automation team
                 </Text>
               </Section>
             </Section>
@@ -195,7 +195,7 @@ export default function WelcomeEmailTemplate({
                 lineHeight: '1.5',
                 textAlign: 'center'
               }}>
-                📅 <strong>Mark Your Calendar:</strong> We're launching on June 15, 2026 at 11:00 AM IST
+                📅 <strong>Mark Your Calendar:</strong> We're launching on April 7, 2026 at 11:00 AM IST
               </Text>
             </Section>
 

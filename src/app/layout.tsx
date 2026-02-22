@@ -28,8 +28,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "RayzrSole - Coming Soon!",
-  description: "RayzrSole is transforming industries through cutting-edge AI & ML solutions. Be the first to know when we launch.",
-  keywords: ["RayzrSole", "AI", "ML", "artificial intelligence", "machine learning", "Kolkata", "India", "AI solutions", "technology"],
+  description: "RayzrSole is transforming industries through cutting-edge automation solutions. Be the first to know when we launch.",
+  keywords: ["RayzrSole", "automation", "intelligent automation", "business automation", "Kolkata", "India", "automation solutions", "technology"],
   authors: [{ name: "RayzrSole" }],
   creator: "RayzrSole",
   publisher: "RayzrSole",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     url: 'https://rayzrsole.com',
     siteName: 'RayzrSole',
     title: 'RayzrSole - Coming Soon!',
-    description: 'RayzrSole is transforming industries through cutting-edge AI & ML solutions. Be the first to know when we launch.',
+    description: 'RayzrSole is transforming industries through cutting-edge automation solutions. Be the first to know when we launch.',
     images: [
       {
         url: '/og-image.jpeg', // Add your OG image to public folder
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'RayzrSole - Coming Soon!',
-    description: 'RayzrSole is transforming industries through cutting-edge AI & ML solutions. Be the first to know when we launch.',
+    description: 'RayzrSole is transforming industries through cutting-edge automation solutions. Be the first to know when we launch.',
     images: ['/og-image.jpeg'], // Same image as OG
     creator: '@rayzrsole', // Replace with your Twitter handle
   },
@@ -111,7 +111,7 @@ export default function RootLayout({
               "name": "RayzrSole",
               "url": "https://rayzrsole.com",
               "logo": "https://rayzrsole.com/logo.png",
-              "description": "Transforming Industries Through AI & ML Solutions",
+              "description": "Transforming Industries Through Automation Solutions",
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Kolkata",
@@ -141,8 +141,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Event",
               "name": "RayzrSole Platform Launch",
-              "startDate": "2026-06-15T11:00:00+05:30",
-              "endDate": "2026-06-15T12:00:00+05:30",
+              "startDate": "2026-04-07T11:00:00+05:30",
+              "endDate": "2026-04-07T12:00:00+05:30",
               "eventStatus": "https://schema.org/EventScheduled",
               "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
               "location": {
@@ -154,7 +154,7 @@ export default function RootLayout({
                 "name": "RayzrSole",
                 "url": "https://rayzrsole.com"
               },
-              "description": "Launch of the RayzrSole platform - transforming industries through cutting-edge AI & ML solutions"
+              "description": "Launch of the RayzrSole platform - transforming industries through cutting-edge automation solutions"
             })
           }}
         />
