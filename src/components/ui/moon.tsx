@@ -2,7 +2,7 @@
 
 import { motion, useAnimation } from "framer-motion";
 import React, { forwardRef, useImperativeHandle, useRef } from "react";
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils2";
 
 interface MoonIconHandle {
   startAnimation: () => void;
