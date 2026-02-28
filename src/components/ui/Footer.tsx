@@ -12,7 +12,7 @@ const Footer = () => {
     projects: {
       title: "Projects",
       items: [
-        { label: "Fazri Analyser", href: "#projects" },
+        { label: "Fazri Analyser", href: "/projects/fazri-analyzer" },
         { label: "P&iD Automation", href: "#projects" },
         { label: "Zync HRMS", href: "#projects" },
         { label: "NRGTech Landing", href: "#projects" },

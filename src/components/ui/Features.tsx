@@ -138,7 +138,9 @@ export default function Features() {
           <ul className="mt-6 space-y-2 text-sm text-gray-500">
             <li className="flex items-center gap-2">
               <span className="size-1.5 rounded-full bg-orange-500" />
-              Fazri Analyser - Campus security &amp; entity prediction
+              <a href="/projects/fazri-analyzer" className="hover:text-orange-400 transition-colors">
+                Fazri Analyser - Campus security &amp; entity prediction
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <span className="size-1.5 rounded-full bg-orange-500" />
