@@ -24,7 +24,7 @@ export const Map = () => {
         >
           <defs>
             <pattern
-              id="diagonal-border-pattern"
+              id="diagonal-border-pattern-left"
               patternUnits="userSpaceOnUse"
               width="64"
               height="64"
@@ -45,7 +45,7 @@ export const Map = () => {
           <rect
             width="100%"
             height="100%"
-            fill="url(#diagonal-border-pattern)"
+            fill="url(#diagonal-border-pattern-left)"
           />
         </svg>
       </div>
@@ -59,7 +59,7 @@ export const Map = () => {
         >
           <defs>
             <pattern
-              id="diagonal-border-pattern"
+              id="diagonal-border-pattern-right"
               patternUnits="userSpaceOnUse"
               width="64"
               height="64"

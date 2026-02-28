@@ -18,7 +18,7 @@ export default function Testimonial() {
       className="relative mx-auto w-full max-w-6xl scroll-my-24 overflow-hidden rounded-2xl bg-gray-900 px-8 py-14 ring-1 ring-white/10 sm:px-14 sm:py-20"
     >
       {/* Background grid pattern */}
-      <svg className="pointer-events-none absolute inset-0 size-full opacity-20">
+      <svg className="pointer-events-none absolute inset-0 size-full opacity-20" aria-hidden="true" focusable="false">
         <defs>
           <pattern
             id="team-grid"
@@ -38,7 +38,7 @@ export default function Testimonial() {
       </svg>
 
       {/* Glow */}
-      <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 size-80 rounded-full bg-orange-500/10 blur-3xl" />
+      <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 size-80 rounded-full bg-orange-500/10 blur-3xl" aria-hidden="true" />
 
       <div className="relative z-10">
         <div className="mb-12 text-center">

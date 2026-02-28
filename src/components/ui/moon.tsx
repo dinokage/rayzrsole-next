@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "motion/react";
 import React, { forwardRef, useImperativeHandle, useRef } from "react";
 import { cn } from "@/lib/utils2";
 

@@ -1,6 +1,6 @@
 "use client"
 import { motion, Variants } from "motion/react"
-import { SolarMark } from "../../../public/SolarMark"
+import { SolarMark } from "./SolarMark"
 
 const ChipViz = () => {
   const createVariants = ({

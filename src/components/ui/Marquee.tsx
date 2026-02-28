@@ -20,6 +20,8 @@ export function Marquee({
   repeat = 4,
   ...props
 }: MarqueeProps) {
+  const safeRepeat = Math.max(0, Math.floor(Number.isFinite(repeat) ? repeat : 0))
+
   return (
     <div
       {...props}
@@ -29,7 +31,7 @@ export function Marquee({
         className,
       )}
     >
-      {Array(repeat)
+      {Array(safeRepeat)
         .fill(0)
         .map((_, i) => (
           <div

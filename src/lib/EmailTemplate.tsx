@@ -195,7 +195,7 @@ export default function WelcomeEmailTemplate({
                 lineHeight: '1.5',
                 textAlign: 'center'
               }}>
-                📅 <strong>Mark Your Calendar:</strong> We&apos;re launching on April 7, 2026 at 11:00 AM IST
+                📅 <strong>Mark Your Calendar:</strong> We&apos;re launching on June 15, 2026 at 11:00 AM IST
               </Text>
             </Section>
 

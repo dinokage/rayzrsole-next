@@ -1,8 +1,7 @@
-# Tremor – Solar
+# RayzrSole — Landing Page
 
-`Solar` is a website template from [Tremor](https://tremor.so). It's built
-using [`Tremor`](https://tremor.so/docs/getting-started/installation) and
-[Next.js](https://nextjs.org).
+A coming soon landing page for [RayzrSole](https://rayzrsole.com), built with
+[Next.js](https://nextjs.org) and Tailwind CSS v4.
 
 ## Getting started
 
@@ -26,11 +25,7 @@ pnpm run dev
 
 This project uses
 [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to
-automatically optimize and load Inter, a custom Google Font.
-
-This project uses
-[`Tremor`](https://raw.tremor.so/docs/getting-started/installation) components
-for the UI.
+automatically optimize and load Inter, Playfair Display, and Poppins fonts.
 
 ## License
 
@@ -42,6 +37,6 @@ This site template is a commercial product and is licensed under the
 For a deeper understanding of the technologies used in this template, check out
 the resources listed below:
 
-- [Tailwind CSS v4 beta](https://tailwindcss.com) - A utility-first CSS framework
+- [Tailwind CSS v4](https://tailwindcss.com) - A utility-first CSS framework
 - [Next.js](https://nextjs.org/docs) - Next.js documentation
 - [Radix UI](https://www.radix-ui.com) - Radix UI Website

@@ -10,7 +10,7 @@ export const StickerCard = ({
   Icon: React.ElementType
 }) => (
   <div className="relative">
-    <a
+    <div
       className={cx(
         "relative z-10 mt-0 block h-full w-full overflow-hidden hover:cursor-pointer",
         "transition-all duration-180 ease-in-out",
@@ -25,6 +25,6 @@ export const StickerCard = ({
         </div>
         <p className="mt-2 text-gray-400 sm:text-sm">{description}</p>
       </div>
-    </a>
+    </div>
   </div>
 )
