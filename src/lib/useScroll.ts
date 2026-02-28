@@ -8,10 +8,9 @@ export default function useScroll(threshold: number) {
   }, [threshold])
 
   useEffect(() => {
-    setScrolled(window.scrollY > threshold)
     window.addEventListener("scroll", onScroll)
     return () => window.removeEventListener("scroll", onScroll)
-  }, [onScroll, threshold])
+  }, [onScroll])
 
   return scrolled
 }

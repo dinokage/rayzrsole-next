@@ -1,7 +1,7 @@
 import { GeistSans } from "geist/font/sans"
 import type { Metadata, Viewport } from "next"
 import "./globals.css"
-
+import LenisProvider from "@/components/LenisProvider";
 import Footer from "@/components/ui/Footer"
 import { NavBar } from "@/components/ui/Navbar"
 import { siteConfig } from "./siteConfig"
@@ -93,9 +93,11 @@ export default function RootLayout({
       <body
         className={`${GeistSans.className} min-h-screen overflow-x-hidden scroll-auto bg-gray-950 antialiased selection:bg-orange-900/40 selection:text-orange-200`}
       >
-        <NavBar />
-        {children}
-        <Footer />
+        <LenisProvider>
+          <NavBar />
+          {children}
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   )
