@@ -9,9 +9,11 @@ import {
   TrendingUp,
 } from "lucide-react"
 import { useState } from "react"
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion"
 
 export function FazriUseCases() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const prefersReducedMotion = usePrefersReducedMotion()
   const useCases = [
     {
       icon: UserCheck,
@@ -75,57 +77,61 @@ export function FazriUseCases() {
           return (
             <div
               key={index}
-              className="relative p-8 rounded-xl bg-gray-900/30 ring-1 ring-gray-800/50 hover:bg-gray-900/50 hover:ring-orange-500/30 transition-all duration-500 group overflow-hidden"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              style={{
+              className={`relative p-8 rounded-xl bg-gray-900/30 ring-1 ring-gray-800/50 hover:bg-gray-900/50 hover:ring-orange-500/30 group overflow-hidden ${prefersReducedMotion ? '' : 'transition-all duration-500'}`}
+              onMouseEnter={() => !prefersReducedMotion && setHoveredIndex(index)}
+              onMouseLeave={() => !prefersReducedMotion && setHoveredIndex(null)}
+              style={prefersReducedMotion ? { opacity: 1 } : {
                 animation: `rise-in 0.6s ease-out ${index * 0.1}s forwards`,
                 opacity: 0
               }}
             >
               {/* Hover sweep effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                <div
-                  className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent"
-                  style={{
-                    transform: isHovered ? 'translateX(0)' : 'translateX(-100%)',
-                    transition: 'transform 0.7s ease-out'
-                  }}
-                />
-              </div>
+              {!prefersReducedMotion && (
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div
+                    className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent"
+                    style={{
+                      transform: isHovered ? 'translateX(0)' : 'translateX(-100%)',
+                      transition: 'transform 0.7s ease-out'
+                    }}
+                  />
+                </div>
+              )}
 
               {/* Icon */}
               <div className="relative flex items-center gap-4 mb-4">
-                <div className="flex items-center justify-center size-12 rounded-lg bg-orange-500/10 ring-1 ring-orange-500/20 group-hover:bg-orange-500/15 group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                <div className={`flex items-center justify-center size-12 rounded-lg bg-orange-500/10 ring-1 ring-orange-500/20 group-hover:bg-orange-500/15 ${prefersReducedMotion ? '' : 'group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500'}`}>
                   <Icon className="size-6 text-orange-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-white group-hover:text-orange-50 transition-colors">
+                <h3 className={`text-xl font-semibold text-white group-hover:text-orange-50 ${prefersReducedMotion ? '' : 'transition-colors'}`}>
                   {useCase.title}
                 </h3>
               </div>
 
               {/* Description */}
-              <p className="relative text-gray-400 mb-4 leading-relaxed group-hover:text-gray-300 transition-colors">
+              <p className={`relative text-gray-400 mb-4 leading-relaxed group-hover:text-gray-300 ${prefersReducedMotion ? '' : 'transition-colors'}`}>
                 {useCase.description}
               </p>
 
               {/* Example with animated border */}
               <div
-                className="relative pl-4 border-l-2 border-orange-500/30 group-hover:border-orange-500/50 transition-all duration-500"
-                style={{
+                className={`relative pl-4 border-l-2 border-orange-500/30 group-hover:border-orange-500/50 ${prefersReducedMotion ? '' : 'transition-all duration-500'}`}
+                style={prefersReducedMotion ? {} : {
                   borderLeftWidth: isHovered ? '3px' : '2px'
                 }}
               >
-                <p className="text-sm text-gray-500 italic group-hover:text-gray-400 transition-colors">
+                <p className={`text-sm text-gray-500 italic group-hover:text-gray-400 ${prefersReducedMotion ? '' : 'transition-colors'}`}>
                   {useCase.example}
                 </p>
                 {/* Animated dot on border */}
-                <div
-                  className="absolute left-0 top-0 w-2 h-2 -translate-x-1/2 rounded-full bg-orange-500 opacity-0 group-hover:opacity-100 transition-opacity"
-                  style={{
-                    animation: isHovered ? 'slide-down 2s ease-in-out infinite' : 'none'
-                  }}
-                />
+                {!prefersReducedMotion && (
+                  <div
+                    className="absolute left-0 top-0 w-2 h-2 -translate-x-1/2 rounded-full bg-orange-500 opacity-0 group-hover:opacity-100 transition-opacity"
+                    style={{
+                      animation: isHovered ? 'slide-down 2s ease-in-out infinite' : 'none'
+                    }}
+                  />
+                )}
               </div>
             </div>
           )

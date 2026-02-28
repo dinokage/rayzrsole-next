@@ -139,7 +139,7 @@ export default function Features() {
             <li className="flex items-center gap-2">
               <span className="size-1.5 rounded-full bg-orange-500" />
               <a href="/projects/fazri-analyzer" className="hover:text-orange-400 transition-colors">
-                Fazri Analyser - Campus security &amp; entity prediction
+                Fazri Analyzer - Campus security &amp; entity prediction
               </a>
             </li>
             <li className="flex items-center gap-2">

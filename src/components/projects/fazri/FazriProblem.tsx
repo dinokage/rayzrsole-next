@@ -1,22 +1,25 @@
 "use client"
 
 import { XCircle } from "lucide-react"
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion"
+
+const problems = [
+  {
+    title: "You can't see the full picture",
+    description: "Security cameras only show one angle. Card swipes tell you someone entered, but not where they went. WiFi logs show devices, but not people. Each system works alone.",
+  },
+  {
+    title: "Incidents catch you off guard",
+    description: "By the time you notice something wrong, it's too late. You're reacting instead of preventing. There's no way to spot patterns before they become problems.",
+  },
+  {
+    title: "Finding information takes forever",
+    description: "Someone reports an incident from yesterday. Now you're checking five different systems, correlating timestamps, and piecing together what happened. Hours wasted on basic questions.",
+  },
+]
 
 export function FazriProblem() {
-  const problems = [
-    {
-      title: "You can't see the full picture",
-      description: "Security cameras only show one angle. Card swipes tell you someone entered, but not where they went. WiFi logs show devices, but not people. Each system works alone.",
-    },
-    {
-      title: "Incidents catch you off guard",
-      description: "By the time you notice something wrong, it's too late. You're reacting instead of preventing. There's no way to spot patterns before they become problems.",
-    },
-    {
-      title: "Finding information takes forever",
-      description: "Someone reports an incident from yesterday. Now you're checking five different systems, correlating timestamps, and piecing together what happened. Hours wasted on basic questions.",
-    },
-  ]
+  const prefersReducedMotion = usePrefersReducedMotion()
 
   return (
     <section className="relative mx-auto max-w-6xl">
@@ -39,22 +42,24 @@ export function FazriProblem() {
         {problems.map((problem, index) => (
           <div
             key={index}
-            className="relative p-8 rounded-xl bg-gray-900/50 ring-1 ring-gray-800 hover:ring-red-500/20 transition-all duration-500 group/problem overflow-hidden"
-            style={{
+            className={`relative p-8 rounded-xl bg-gray-900/50 ring-1 ring-gray-800 hover:ring-red-500/20 group/problem overflow-hidden ${prefersReducedMotion ? '' : 'transition-all duration-500'}`}
+            style={prefersReducedMotion ? { opacity: 1 } : {
               animation: `fade-slide-in 0.6s ease-out ${index * 0.15}s forwards`,
               opacity: 0
             }}
           >
             {/* Animated background glitch effect */}
-            <div className="absolute inset-0 opacity-0 group-hover/problem:opacity-100 transition-opacity duration-300">
-              <div className="absolute inset-0 bg-red-500/5" />
-              <div
-                className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-transparent"
-                style={{
-                  animation: 'problem-scan 3s ease-in-out infinite'
-                }}
-              />
-            </div>
+            {!prefersReducedMotion && (
+              <div className="absolute inset-0 opacity-0 group-hover/problem:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 bg-red-500/5" />
+                <div
+                  className="absolute inset-0 bg-gradient-to-b from-transparent via-red-500/5 to-transparent"
+                  style={{
+                    animation: 'problem-scan 3s ease-in-out infinite'
+                  }}
+                />
+              </div>
+            )}
 
             {/* Decorative element with pulse */}
             <div className="absolute top-0 left-0 w-1 h-16 bg-red-500/50 rounded-r group-hover/problem:h-24 group-hover/problem:bg-red-500/70 transition-all duration-500" />

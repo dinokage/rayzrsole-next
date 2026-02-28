@@ -2,10 +2,45 @@
 
 import { TrendingUp, Clock, Target, DollarSign } from "lucide-react"
 import NumberFlow from "@number-flow/react"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion"
+
+const stats = [
+  {
+    icon: Clock,
+    value: 75,
+    suffix: "%",
+    label: "Faster Incident Response",
+    description: "Security teams resolve issues in minutes instead of hours",
+  },
+  {
+    icon: Target,
+    value: 90,
+    suffix: "%",
+    label: "Fewer False Alarms",
+    description: "Context-aware alerts mean less noise, more signal",
+  },
+  {
+    icon: TrendingUp,
+    value: 2.8,
+    prefix: "$",
+    suffix: "B",
+    label: "Market Opportunity",
+    description: "Campus security systems market growing rapidly",
+  },
+  {
+    icon: DollarSign,
+    value: 60,
+    suffix: "%",
+    label: "Lower Staffing Costs",
+    description: "Same security coverage with fewer personnel",
+  },
+]
 
 export function FazriStats() {
   const [isVisible, setIsVisible] = useState(false)
+  const statsRef = useRef<HTMLDivElement | null>(null)
+  const prefersReducedMotion = usePrefersReducedMotion()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -19,45 +54,13 @@ export function FazriStats() {
       { threshold: 0.2 }
     )
 
-    const element = document.getElementById('stats-section')
-    if (element) observer.observe(element)
+    if (statsRef.current) observer.observe(statsRef.current)
 
     return () => observer.disconnect()
   }, [])
-  const stats = [
-    {
-      icon: Clock,
-      value: 75,
-      suffix: "%",
-      label: "Faster Incident Response",
-      description: "Security teams resolve issues in minutes instead of hours",
-    },
-    {
-      icon: Target,
-      value: 90,
-      suffix: "%",
-      label: "Fewer False Alarms",
-      description: "Context-aware alerts mean less noise, more signal",
-    },
-    {
-      icon: TrendingUp,
-      value: 2.8,
-      prefix: "$",
-      suffix: "B",
-      label: "Market Opportunity",
-      description: "Campus security systems market growing rapidly",
-    },
-    {
-      icon: DollarSign,
-      value: 60,
-      suffix: "%",
-      label: "Lower Staffing Costs",
-      description: "Same security coverage with fewer personnel",
-    },
-  ]
 
   return (
-    <section id="stats-section" className="relative mx-auto max-w-6xl">
+    <section ref={statsRef} className="relative mx-auto max-w-6xl">
       {/* Section header */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 rounded-full bg-orange-500/10 px-4 py-2 ring-1 ring-orange-500/20 mb-6">
@@ -79,25 +82,29 @@ export function FazriStats() {
           return (
             <div
               key={index}
-              className="relative p-6 rounded-xl bg-gray-900/50 ring-1 ring-gray-800 hover:ring-orange-500/30 transition-all duration-500 group overflow-hidden"
-              style={{
+              className={`relative p-6 rounded-xl bg-gray-900/50 ring-1 ring-gray-800 hover:ring-orange-500/30 group overflow-hidden ${prefersReducedMotion ? '' : 'transition-all duration-500'}`}
+              style={prefersReducedMotion ? { opacity: 1 } : {
                 animation: isVisible ? `slide-in-up 0.6s ease-out ${index * 0.1}s forwards` : 'none',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0)' : 'translateY(20px)'
               }}
             >
               {/* Animated background shimmer */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                <div
-                  className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-orange-500/5 to-transparent"
-                />
-              </div>
+              {!prefersReducedMotion && (
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                  <div
+                    className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-orange-500/5 to-transparent"
+                  />
+                </div>
+              )}
 
               {/* Scan line effect */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-scan-line" />
+              {!prefersReducedMotion && (
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-scan-line" />
+              )}
 
               {/* Icon */}
-              <div className="relative inline-flex items-center justify-center size-12 rounded-lg bg-orange-500/10 ring-1 ring-orange-500/20 mb-4 group-hover:bg-orange-500/15 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
+              <div className={`relative inline-flex items-center justify-center size-12 rounded-lg bg-orange-500/10 ring-1 ring-orange-500/20 mb-4 group-hover:bg-orange-500/15 ${prefersReducedMotion ? '' : 'transition-all duration-300 group-hover:scale-110 group-hover:rotate-3'}`}>
                 <Icon className="size-6 text-orange-400" />
               </div>
 

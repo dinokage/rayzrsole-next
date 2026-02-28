@@ -2,8 +2,11 @@
 
 import { ArrowRight, Shield, Eye, AlertTriangle } from "lucide-react"
 import { Button } from "@/components/Button"
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion"
 
 export function FazriHero() {
+  const prefersReducedMotion = usePrefersReducedMotion()
+
   return (
     <section className="relative flex min-h-[100vh] w-full flex-col items-center justify-center -mt-20 pt-20 overflow-hidden">
       {/* Background with layered effects */}
@@ -13,7 +16,7 @@ export function FazriHero() {
           <div
             className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(249,115,22,0.4)_2px,rgba(249,115,22,0.4)_4px)]"
             style={{
-              animation: 'scan 8s linear infinite',
+              animation: prefersReducedMotion ? 'none' : 'scan 8s linear infinite',
             }}
           />
         </div>
@@ -43,26 +46,28 @@ export function FazriHero() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-500/5 blur-[120px] rounded-full" />
 
         {/* Radial pulse effect */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none">
-          <div
-            className="absolute inset-0 rounded-full border border-orange-500/10"
-            style={{
-              animation: 'radar-pulse 4s ease-out infinite',
-            }}
-          />
-          <div
-            className="absolute inset-0 rounded-full border border-orange-500/10"
-            style={{
-              animation: 'radar-pulse 4s ease-out infinite 1s',
-            }}
-          />
-          <div
-            className="absolute inset-0 rounded-full border border-orange-500/10"
-            style={{
-              animation: 'radar-pulse 4s ease-out infinite 2s',
-            }}
-          />
-        </div>
+        {!prefersReducedMotion && (
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none">
+            <div
+              className="absolute inset-0 rounded-full border border-orange-500/10"
+              style={{
+                animation: 'radar-pulse 4s ease-out infinite',
+              }}
+            />
+            <div
+              className="absolute inset-0 rounded-full border border-orange-500/10"
+              style={{
+                animation: 'radar-pulse 4s ease-out infinite 1s',
+              }}
+            />
+            <div
+              className="absolute inset-0 rounded-full border border-orange-500/10"
+              style={{
+                animation: 'radar-pulse 4s ease-out infinite 2s',
+              }}
+            />
+          </div>
+        )}
       </div>
 
       {/* Content */}
@@ -77,25 +82,27 @@ export function FazriHero() {
 
         {/* Main headline */}
         <h1 className="text-center font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] tracking-[-0.02em] max-w-5xl mx-auto">
-          <span className="inline-block" style={{ animation: 'fade-in-up 0.6s ease-out forwards', opacity: 0 }}>
+          <span className="inline-block" style={prefersReducedMotion ? { opacity: 1 } : { animation: 'fade-in-up 0.6s ease-out forwards', opacity: 0 }}>
             Stop security incidents{" "}
           </span>
-          <span className="inline-block text-orange-400 relative" style={{ animation: 'fade-in-up 0.6s ease-out 0.2s forwards', opacity: 0 }}>
+          <span className="inline-block text-orange-400 relative" style={prefersReducedMotion ? { opacity: 1 } : { animation: 'fade-in-up 0.6s ease-out 0.2s forwards', opacity: 0 }}>
             before they happen
-            <svg className="absolute -bottom-2 left-0 w-full h-3 opacity-30" style={{ animation: 'draw-underline 1s ease-out 1s forwards' }}>
-              <line x1="0" y1="50%" x2="100%" y2="50%" stroke="currentColor" strokeWidth="3" strokeDasharray="1000" strokeDashoffset="1000" />
-            </svg>
+            {!prefersReducedMotion && (
+              <svg className="absolute -bottom-2 left-0 w-full h-3 opacity-30" style={{ animation: 'draw-underline 1s ease-out 1s forwards' }}>
+                <line x1="0" y1="50%" x2="100%" y2="50%" stroke="currentColor" strokeWidth="3" strokeDasharray="1000" strokeDashoffset="1000" />
+              </svg>
+            )}
           </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="mt-8 text-center text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light" style={{ animation: 'fade-in-up 0.6s ease-out 0.4s forwards', opacity: 0 }}>
+        <p className="mt-8 text-center text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed font-light" style={prefersReducedMotion ? { opacity: 1 } : { animation: 'fade-in-up 0.6s ease-out 0.4s forwards', opacity: 0 }}>
           See everything happening on your campus in real-time. Get alerts when something looks unusual.
           Keep students, staff, and visitors safe without compromising privacy.
         </p>
 
         {/* Key benefits */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-300" style={{ animation: 'fade-in-up 0.6s ease-out 0.6s forwards', opacity: 0 }}>
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-300" style={prefersReducedMotion ? { opacity: 1 } : { animation: 'fade-in-up 0.6s ease-out 0.6s forwards', opacity: 0 }}>
           {[
             { icon: Eye, label: 'Real-time visibility' },
             { icon: AlertTriangle, label: 'Predictive alerts' },
@@ -103,13 +110,13 @@ export function FazriHero() {
           ].map(({ icon: Icon, label }, index) => (
             <div
               key={label}
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900/50 ring-1 ring-gray-800 hover:ring-orange-500/30 transition-all duration-300 hover:bg-gray-900/70 group"
-              style={{
+              className={`flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900/50 ring-1 ring-gray-800 hover:ring-orange-500/30 hover:bg-gray-900/70 group ${prefersReducedMotion ? '' : 'transition-all duration-300'}`}
+              style={prefersReducedMotion ? { opacity: 1 } : {
                 animation: `fade-in-up 0.4s ease-out ${0.8 + index * 0.1}s forwards`,
                 opacity: 0
               }}
             >
-              <Icon className="size-4 text-orange-400 group-hover:scale-110 transition-transform duration-300" />
+              <Icon className={`size-4 text-orange-400 ${prefersReducedMotion ? '' : 'group-hover:scale-110 transition-transform duration-300'}`} />
               <span className="font-medium">{label}</span>
             </div>
           ))}

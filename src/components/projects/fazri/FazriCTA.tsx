@@ -2,8 +2,11 @@
 
 import { ArrowRight, Calendar, MessageSquare, FileText } from "lucide-react"
 import { Button } from "@/components/Button"
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion"
 
 export function FazriCTA() {
+  const prefersReducedMotion = usePrefersReducedMotion()
+
   return (
     <section id="demo" className="relative mx-auto max-w-6xl scroll-mt-24 group/cta">
       {/* Background effects */}
@@ -35,7 +38,7 @@ export function FazriCTA() {
           <div
             className="absolute inset-0 bg-[repeating-linear-gradient(0deg,transparent,transparent_2px,rgba(249,115,22,0.6)_2px,rgba(249,115,22,0.6)_4px)]"
             style={{
-              animation: 'cta-scan 12s linear infinite'
+              animation: prefersReducedMotion ? 'none' : 'cta-scan 12s linear infinite'
             }}
           />
         </div>
@@ -44,13 +47,13 @@ export function FazriCTA() {
         <div
           className="absolute -top-24 -right-24 size-96 rounded-full bg-orange-500/10 blur-3xl transition-all duration-1000 group-hover/cta:bg-orange-500/15"
           style={{
-            animation: 'glow-pulse 4s ease-in-out infinite'
+            animation: prefersReducedMotion ? 'none' : 'glow-pulse 4s ease-in-out infinite'
           }}
         />
         <div
           className="absolute -bottom-24 -left-24 size-96 rounded-full bg-orange-500/5 blur-3xl transition-all duration-1000 group-hover/cta:bg-orange-500/10"
           style={{
-            animation: 'glow-pulse 4s ease-in-out infinite 2s'
+            animation: prefersReducedMotion ? 'none' : 'glow-pulse 4s ease-in-out infinite 2s'
           }}
         />
 
@@ -107,8 +110,10 @@ export function FazriCTA() {
               >
                 <a href="mailto:contact@rayzrsole.com?subject=Fazri Analyzer Demo Request" className="inline-flex items-center gap-2">
                   <span className="relative z-10">Schedule Demo</span>
-                  <Calendar className="size-5 relative z-10 transition-transform duration-300 group-hover/btn:rotate-12" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
+                  <Calendar className={`size-5 relative z-10 ${prefersReducedMotion ? '' : 'transition-transform duration-300 group-hover/btn:rotate-12'}`} />
+                  {!prefersReducedMotion && (
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
+                  )}
                 </a>
               </Button>
               <Button
@@ -118,7 +123,7 @@ export function FazriCTA() {
               >
                 <a href="mailto:contact@rayzrsole.com?subject=Fazri Analyzer Inquiry" className="inline-flex items-center gap-2">
                   Ask Questions
-                  <MessageSquare className="size-5 transition-transform duration-300 group-hover/btn2:scale-110" />
+                  <MessageSquare className={`size-5 ${prefersReducedMotion ? '' : 'transition-transform duration-300 group-hover/btn2:scale-110'}`} />
                 </a>
               </Button>
             </div>

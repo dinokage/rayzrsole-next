@@ -2,16 +2,20 @@
 
 import { Database, Cpu, Eye, ArrowRight } from "lucide-react"
 import { useState, useEffect } from "react"
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion"
 
 export function FazriHowItWorks() {
   const [activeStep, setActiveStep] = useState(0)
+  const prefersReducedMotion = usePrefersReducedMotion()
 
   useEffect(() => {
+    if (prefersReducedMotion) return
+
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % 3)
     }, 4000)
     return () => clearInterval(interval)
-  }, [])
+  }, [prefersReducedMotion])
   const steps = [
     {
       icon: Database,
@@ -93,9 +97,7 @@ export function FazriHowItWorks() {
           return (
             <div
               key={index}
-              className={`relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
-                isEven ? "" : "lg:flex-row-reverse"
-              }`}
+              className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
             >
               {/* Content side */}
               <div className={`${isEven ? "lg:text-right lg:pr-16" : "lg:pl-16 lg:col-start-2"}`}>
