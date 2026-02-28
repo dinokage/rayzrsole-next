@@ -25,7 +25,7 @@ const ChipViz = () => {
   })
 
   return (
-    <div className="relative flex items-center">
+    <div className="relative flex items-center" aria-hidden="true">
       <div className="relative">
         <motion.div
           variants={createVariants({ scale: 1.1, delay: 0 })}

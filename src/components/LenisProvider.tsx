@@ -21,33 +21,32 @@ export default function LenisProvider({ children }: LenisProviderProps) {
       touchMultiplier: 2,
     });
 
-    // Create a function to handle the animation frame updates
-    function raf(time: number) {
-      lenisInstance.raf(time);
-      requestAnimationFrame(raf);
+    // Restore scroll position from sessionStorage on mount
+    const savedScroll = sessionStorage.getItem('scrollPosition');
+    if (savedScroll) {
+      lenisInstance.scrollTo(parseFloat(savedScroll), { immediate: true });
+      sessionStorage.removeItem('scrollPosition');
     }
 
-    // Start the requestAnimationFrame loop
-    requestAnimationFrame(raf);
+    // RAF loop with cancellable handle
+    let rafId: number;
+    function raf(time: number) {
+      lenisInstance.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
 
-    // Store the instance
     setLenis(lenisInstance);
 
-    // Set up scroll restoration on navigation
-    const handleRouteChangeStart = () => {
-      if (lenisInstance) {
-        const currentScroll = lenisInstance.scroll;
-        sessionStorage.setItem('scrollPosition', currentScroll.toString());
-      }
+    // Save scroll position before page unload
+    const handleBeforeUnload = () => {
+      sessionStorage.setItem('scrollPosition', lenisInstance.scroll.toString());
     };
-
-    // For a Next.js app, you would typically use router events here
-    // This is a simplified version that will work for most cases
-    window.addEventListener('beforeunload', handleRouteChangeStart);
+    window.addEventListener('beforeunload', handleBeforeUnload);
 
     return () => {
-      window.removeEventListener('beforeunload', handleRouteChangeStart);
-      // Clean up the Lenis instance when the component unmounts
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
       lenisInstance.destroy();
     };
   }, []);

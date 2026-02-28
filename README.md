@@ -29,8 +29,7 @@ automatically optimize and load Inter, Playfair Display, and Poppins fonts.
 
 ## License
 
-This site template is a commercial product and is licensed under the
-[Tremor License](https://blocks.tremor.so/license).
+This project is open source and available under the [MIT License](./LICENSE).
 
 ## Learn more
 
