@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Clock, ExternalLink } from "lucide-react";
 import { CountdownTimer } from "./CountdownTimer";
 import { NotifyForm } from "./NotifyForm";

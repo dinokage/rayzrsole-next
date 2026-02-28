@@ -110,7 +110,7 @@ export default function WelcomeEmailTemplate({
                 margin: "0",
                 lineHeight: "1.2"
               }}>
-                You're All Set!
+                You&apos;re All Set!
               </Heading>
             </Section>
 
@@ -122,8 +122,8 @@ export default function WelcomeEmailTemplate({
               margin: '0 0 32px 0',
               textAlign: 'center'
             }}>
-              Thank you for your interest in RayzrSole! We're building the next generation of
-              automation solutions to transform industries. We're thrilled to have you on board.
+              Thank you for your interest in RayzrSole! We&apos;re building the next generation of
+              automation solutions to transform industries. We&apos;re thrilled to have you on board.
             </Text>
 
             {/* Features Section */}
@@ -140,7 +140,7 @@ export default function WelcomeEmailTemplate({
                 margin: '0 0 16px 0',
                 lineHeight: '1.3'
               }}>
-                🚀 What's Coming Next?
+                🚀 What&apos;s Coming Next?
               </Heading>
 
               <Section style={{ marginBottom: '12px' }}>
@@ -195,7 +195,7 @@ export default function WelcomeEmailTemplate({
                 lineHeight: '1.5',
                 textAlign: 'center'
               }}>
-                📅 <strong>Mark Your Calendar:</strong> We're launching on April 7, 2026 at 11:00 AM IST
+                📅 <strong>Mark Your Calendar:</strong> We&apos;re launching on June 15, 2026 at 11:00 AM IST
               </Text>
             </Section>
 
@@ -207,7 +207,7 @@ export default function WelcomeEmailTemplate({
               margin: '0 0 32px 0',
               textAlign: 'center'
             }}>
-              We'll send you an exclusive early access invitation as soon as we're ready to launch.
+              We&apos;ll send you an exclusive early access invitation as soon as we&apos;re ready to launch.
               Get ready to be part of something extraordinary!
             </Text>
 
@@ -326,10 +326,19 @@ export default function WelcomeEmailTemplate({
             <Text style={{
               fontSize: '12px',
               color: '#9ca3af',
+              margin: '0 0 4px 0',
+              lineHeight: '1.4'
+            }}>
+              This email was sent to {email}.
+            </Text>
+
+            <Text style={{
+              fontSize: '12px',
+              color: '#9ca3af',
               margin: '0',
               lineHeight: '1.4'
             }}>
-              If you didn't sign up for this, you can safely ignore this email.
+              If you didn&apos;t sign up for this, you can safely ignore this email.
             </Text>
           </Section>
         </Container>

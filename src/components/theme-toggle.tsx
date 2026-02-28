@@ -6,7 +6,7 @@ import { MoonIcon } from "./ui/moon";
 import { SunIcon } from "./ui/sun";
 import { useTheme } from "next-themes";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils2";
 import { Button } from "@/components/ui/button";
 
 export const ModeToggle = React.forwardRef<

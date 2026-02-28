@@ -1,11 +1,28 @@
-import { ComingSoonPage } from "@/components/coming-soon/ComingSoonPage";
+import { CallToAction } from "@/components/ui/CallToAction"
+import FeatureDivider from "@/components/ui/FeatureDivider"
+import Features from "@/components/ui/Features"
+import { Hero } from "@/components/ui/Hero"
+import { SolarAnalytics } from "@/components/ui/SolarAnalytics"
+import Testimonial from "@/components/ui/Testimonial"
 
 export default function Home() {
   return (
-    <ComingSoonPage
-      launchDate={new Date("2026-04-07T11:00:00+05:30")}
-      title="RayzrSole: The Future of Automation is Coming Soon!"
-      subtitle="We're transforming industries with cutting-edge automation solutions. Get ready for something extraordinary - join us as we unveil the future of intelligent automation!"
-    />
-  );
+    <main className="relative mx-auto flex flex-col">
+      <Hero />
+      <div className="mt-24 px-4 xl:px-0">
+        <Features />
+      </div>
+      <FeatureDivider className="my-16 max-w-6xl" />
+      <div className="mt-8 px-4 xl:px-0">
+        <Testimonial />
+      </div>
+      <FeatureDivider className="my-16 max-w-6xl" />
+      <div className="mt-12 mb-20 px-4 xl:px-0">
+        <SolarAnalytics />
+      </div>
+      <div className="mt-10 mb-40 px-4 xl:px-0">
+        <CallToAction />
+      </div>
+    </main>
+  )
 }
