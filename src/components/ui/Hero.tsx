@@ -4,15 +4,12 @@ import { ArrowRight } from "lucide-react"
 import { Avatar, AvatarFallback, AvatarImage } from "./Avatar"
 import { Marquee } from "./Marquee"
 
-const PLACEHOLDER =
-  "https://res.cloudinary.com/ddvheihbd/image/upload/f_auto,q_auto/v1/team/phpxcoder"
-
 const teamAvatars = [
-  { initials: "SA", name: "Sakib Alam", src: PLACEHOLDER },
-  { initials: "SR", name: "Shreyartha Roy", src: PLACEHOLDER },
-  { initials: "SP", name: "Subhadeep Pramanik", src: PLACEHOLDER },
-  { initials: "DY", name: "Dinesh Yerra", src: PLACEHOLDER },
-  { initials: "SS", name: "Sreyas Saravindu", src: PLACEHOLDER },
+  { initials: "SA", name: "Sakib Alam", src: "https://res.cloudinary.com/ddvheihbd/image/upload/v1772279986/sakib.png" },
+  { initials: "SR", name: "Shreyartha Roy", src: "https://res.cloudinary.com/ddvheihbd/image/upload/v1772279987/shreyartha.png" },
+  { initials: "SP", name: "Subhadeep Pramanik", src: "https://res.cloudinary.com/ddvheihbd/image/upload/f_auto,q_auto/v1/team/phpxcoder" },
+  { initials: "DY", name: "Dinesh Yerra", src: "https://res.cloudinary.com/ddvheihbd/image/upload/t_dino_1_1/team/dinokage" },
+  { initials: "SS", name: "Sreyas Saravindu", src: "https://res.cloudinary.com/ddvheihbd/image/upload/v1772279986/sreyas.jpg" },
 ]
 
 const stats = [

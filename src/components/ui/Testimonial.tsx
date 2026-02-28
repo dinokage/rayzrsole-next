@@ -2,30 +2,12 @@
 
 import Image from "next/image"
 
-const PLACEHOLDER =
-  "https://res.cloudinary.com/ddvheihbd/image/upload/f_auto,q_auto/v1/team/phpxcoder"
-
 const team = [
-  { name: "Sakib Alam", role: "CEO", initials: "SA", src: PLACEHOLDER },
-  { name: "Shreyartha Roy", role: "CFO", initials: "SR", src: PLACEHOLDER },
-  {
-    name: "Subhadeep Pramanik",
-    role: "CTO",
-    initials: "SP",
-    src: PLACEHOLDER,
-  },
-  {
-    name: "Dinesh Yerra",
-    role: "Solutions Architect",
-    initials: "DY",
-    src: PLACEHOLDER,
-  },
-  {
-    name: "Sreyas Saravindu",
-    role: "Freelance",
-    initials: "SS",
-    src: PLACEHOLDER,
-  },
+  { name: "Sakib Alam", role: "CEO", initials: "SA", src: "https://res.cloudinary.com/ddvheihbd/image/upload/v1772279986/sakib.png" },
+  { name: "Shreyartha Roy", role: "CFO", initials: "SR", src: "https://res.cloudinary.com/ddvheihbd/image/upload/v1772279987/shreyartha.png" },
+  { name: "Subhadeep Pramanik", role: "CTO", initials: "SP", src: "https://res.cloudinary.com/ddvheihbd/image/upload/f_auto,q_auto/v1/team/phpxcoder" },
+  { name: "Dinesh Yerra", role: "Solutions Architect", initials: "DY", src: "https://res.cloudinary.com/ddvheihbd/image/upload/t_dino_1_1/team/dinokage" },
+  { name: "Sreyas Saravindu", role: "Freelance", initials: "SS", src: "https://res.cloudinary.com/ddvheihbd/image/upload/v1772279986/sreyas.jpg" },
 ]
 
 export default function Testimonial() {
