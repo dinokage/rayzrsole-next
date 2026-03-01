@@ -168,8 +168,8 @@ export function FazriHowItWorks() {
                           key={i}
                           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                           style={{
-                            animation: `orbit ${3 + i}s linear infinite`,
-                            animationDelay: `${i * 0.5}s`
+                            animation: prefersReducedMotion ? 'none' : `orbit ${3 + i}s linear infinite`,
+                            animationDelay: prefersReducedMotion ? '0s' : `${i * 0.5}s`
                           }}
                         >
                           <div
@@ -215,7 +215,7 @@ export function FazriHowItWorks() {
                   </div>
 
                   {/* Scanning line */}
-                  {activeStep === index && (
+                  {activeStep === index && !prefersReducedMotion && (
                     <div
                       className="absolute inset-x-0 h-1 bg-gradient-to-r from-transparent via-orange-500/50 to-transparent"
                       style={{
@@ -240,7 +240,7 @@ export function FazriHowItWorks() {
           }
         }
         @keyframes scan-vertical {
-          0%, 100% {
+          0% {
             top: 0%;
             opacity: 0;
           }

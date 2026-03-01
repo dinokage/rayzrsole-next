@@ -150,7 +150,7 @@ export function FazriUseCases() {
           }
         }
         @keyframes slide-down {
-          0%, 100% {
+          0% {
             top: 0%;
             opacity: 1;
           }
