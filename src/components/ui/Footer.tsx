@@ -121,7 +121,7 @@ const Footer = () => {
           />
         </svg>
 
-        <div className="mr-auto flex w-full justify-between lg:w-fit lg:flex-col">
+        <div className="mr-auto flex w-full flex-col sm:flex-row sm:justify-between lg:w-fit lg:flex-col">
           <Link
             href="/"
             className="flex items-center font-bold tracking-tight text-white select-none"
@@ -137,7 +137,8 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-sm p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-800 hover:text-gray-100"
+                className="rounded-sm p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-800 hover:text-gray-100 touch-manipulation"
+                aria-label="Twitter"
               >
                 <RiTwitterXFill className="size-5" />
               </Link>
@@ -145,7 +146,8 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-sm p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-800 hover:text-gray-100"
+                className="rounded-sm p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-800 hover:text-gray-100 touch-manipulation"
+                aria-label="LinkedIn"
               >
                 <RiLinkedinFill className="size-5" />
               </Link>
@@ -153,7 +155,8 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-sm p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-800 hover:text-gray-100"
+                className="rounded-sm p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-800 hover:text-gray-100 touch-manipulation"
+                aria-label="GitHub"
               >
                 <RiGithubFill className="size-5" />
               </Link>
@@ -161,7 +164,8 @@ const Footer = () => {
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-sm p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-800 hover:text-gray-100"
+                className="rounded-sm p-2 text-gray-500 transition-colors duration-200 hover:bg-gray-800 hover:text-gray-100 touch-manipulation"
+                aria-label="Instagram"
               >
                 <RiInstagramFill className="size-5" />
               </Link>
@@ -174,7 +178,7 @@ const Footer = () => {
 
         {/* Footer Sections */}
         {Object.entries(sections).map(([key, section]) => (
-          <div key={key} className="mt-10 min-w-44 pl-2 lg:mt-0 lg:pl-0">
+          <div key={key} className="mt-10 w-full sm:w-auto sm:min-w-40 md:min-w-44 pl-2 lg:mt-0 lg:pl-0">
             <h3 className="mb-4 font-medium text-gray-200 sm:text-sm">
               {section.title}
             </h3>

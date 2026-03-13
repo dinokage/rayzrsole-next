@@ -60,7 +60,7 @@ export function NavBar() {
           <Button
             onClick={() => setOpen(!open)}
             variant="secondary"
-            className="p-1.5 sm:hidden"
+            className="p-1.5 sm:hidden touch-manipulation min-h-[44px] min-w-[44px]"
             aria-label={open ? "Close Navigation Menu" : "Open Navigation Menu"}
           >
             {!open ? (

@@ -41,23 +41,23 @@ function AvatarStack() {
 function StatsMarquee() {
   return (
     <Marquee
-      className="border-white/10 border-y bg-black/30 py-2 backdrop-blur-sm [--duration:30s] [--gap:2rem]"
+      className="border-white/10 border-y bg-black/30 py-2 sm:py-2.5 backdrop-blur-sm [--duration:20s] sm:[--duration:30s] [--gap:0.75rem] sm:[--gap:1.5rem]"
       pauseOnHover
       reverse
-      repeat={4}
+      repeat={3}
     >
       {stats.map((stat) => (
         <div
-          className="flex items-center gap-3 whitespace-nowrap"
+          className="flex items-center gap-1.5 sm:gap-3 whitespace-nowrap"
           key={stat.label}
         >
-          <span className="font-bold font-mono text-orange-400 text-sm tracking-wide">
+          <span className="font-bold font-mono text-orange-400 text-[10px] sm:text-sm tracking-wide">
             {stat.value}
           </span>
-          <span className="font-medium font-mono text-sm text-white/70 uppercase tracking-[0.15em]">
+          <span className="font-medium font-mono text-[10px] sm:text-sm text-white/70 uppercase tracking-tight sm:tracking-[0.15em]">
             {stat.label}
           </span>
-          <span className="text-base">{stat.emoji}</span>
+          <span className="text-xs sm:text-base">{stat.emoji}</span>
         </div>
       ))}
     </Marquee>
@@ -66,7 +66,7 @@ function StatsMarquee() {
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[115vh] w-full flex-col items-start justify-end -mt-20">
+    <section className="relative flex min-h-[100vh] sm:min-h-[115vh] w-full flex-col items-start justify-end -mt-20 pb-safe">
       {/* Background image */}
       <div
         className="absolute inset-0 bg-center bg-cover"
@@ -87,13 +87,15 @@ export function Hero() {
           <AvatarStack />
         </div>
       </div>
-      <StatsMarquee />
+      <div className="relative z-10 w-full overflow-hidden">
+        <StatsMarquee />
+      </div>
 
       {/* Main content */}
       <div className="relative z-10 w-full px-4 pb-16 sm:px-8 sm:pb-24 lg:px-16 lg:pb-32">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end">
           <div className="w-full space-y-5 sm:w-1/2">
-            <h1 className="font-medium text-4xl text-white leading-[1.05] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+            <h1 className="font-medium text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.05] tracking-tight">
               Infrastructure{" "}
               <span className="text-orange-400">that works</span>
               <br />
@@ -104,11 +106,11 @@ export function Hero() {
             </p>
             <a
               href="mailto:contact@rayzrsole.com"
-              className="inline-flex items-center gap-0 rounded-none bg-orange-400 py-3 pl-5 font-normal text-black text-lg transition-all hover:bg-orange-300"
+              className="inline-flex items-center gap-0 rounded-none bg-orange-400 py-3 pl-4 sm:pl-5 pr-1 font-normal text-base sm:text-lg transition-all hover:bg-orange-300 min-h-[44px] touch-manipulation"
             >
-              Get in touch
-              <span className="border-black/20 border-l p-3 ml-2">
-                <ArrowRight className="size-5" />
+              <span className="whitespace-nowrap">Get in touch</span>
+              <span className="border-black/20 border-l p-2.5 sm:p-3 ml-1.5 sm:ml-2">
+                <ArrowRight className="size-4 sm:size-5" />
               </span>
             </a>
           </div>

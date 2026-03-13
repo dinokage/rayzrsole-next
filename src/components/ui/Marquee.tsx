@@ -26,7 +26,7 @@ export function Marquee({
     <div
       {...props}
       className={cx(
-        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]",
+        "group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] w-full",
         !vertical ? "flex-row" : "flex-col",
         className,
       )}
@@ -37,7 +37,7 @@ export function Marquee({
           <div
             key={i}
             className={cx(
-              "flex shrink-0 justify-around [gap:var(--gap)]",
+              "flex shrink-0 [gap:var(--gap)]",
               !vertical
                 ? "animate-marquee flex-row"
                 : "animate-marquee-vertical flex-col",

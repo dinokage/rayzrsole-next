@@ -8,7 +8,7 @@ export function FazriHero() {
   const prefersReducedMotion = usePrefersReducedMotion()
 
   return (
-    <section className="relative flex min-h-[100vh] w-full flex-col items-center justify-center -mt-20 pt-20 overflow-hidden">
+    <section className="relative flex min-h-screen w-full flex-col items-center justify-center -mt-20 pt-20 pb-safe overflow-hidden">
       {/* Background with layered effects */}
       <div className="absolute inset-0 bg-gray-950">
         {/* Animated scan lines */}
@@ -43,11 +43,11 @@ export function FazriHero() {
 
         {/* Gradient overlays */}
         <div className="absolute inset-0 bg-linear-to-b from-gray-950 via-transparent to-gray-950" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-500/5 blur-[120px] rounded-full" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 sm:w-96 sm:h-96 md:w-[600px] md:h-[600px] bg-orange-500/5 blur-[80px] sm:blur-[100px] md:blur-[120px] rounded-full" />
 
         {/* Radial pulse effect */}
         {!prefersReducedMotion && (
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] pointer-events-none">
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 sm:w-96 sm:h-96 md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px] pointer-events-none">
             <div
               className="absolute inset-0 rounded-full border border-orange-500/10"
               style={{
@@ -81,7 +81,7 @@ export function FazriHero() {
         </div>
 
         {/* Main headline */}
-        <h1 className="text-center font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] tracking-[-0.02em] max-w-5xl mx-auto">
+        <h1 className="text-center font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.05] tracking-[-0.02em] max-w-5xl mx-auto px-2">
           <span className="inline-block" style={prefersReducedMotion ? { opacity: 1 } : { animation: 'fade-in-up 0.6s ease-out forwards', opacity: 0 }}>
             Stop security incidents{" "}
           </span>
@@ -127,31 +127,31 @@ export function FazriHero() {
           <Button
             asChild
             variant="primary"
-            className="h-12 px-8 text-base font-semibold"
+            className="h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold touch-manipulation"
           >
             <a href="#demo" className="inline-flex items-center gap-2">
-              Schedule a Demo
-              <ArrowRight className="size-5" />
+              <span className="whitespace-nowrap">Schedule a Demo</span>
+              <ArrowRight className="size-4 sm:size-5" />
             </a>
           </Button>
           <Button
             asChild
             variant="ghost"
-            className="h-12 px-8 text-base font-semibold"
+            className="h-12 px-6 sm:px-8 text-sm sm:text-base font-semibold touch-manipulation"
           >
-            <a href="#how-it-works">See How It Works</a>
+            <a href="#how-it-works"><span className="whitespace-nowrap">See How It Works</span></a>
           </Button>
         </div>
 
         {/* Social proof */}
         <div className="mt-16 text-center">
           <p className="text-sm text-gray-500 mb-4">Trusted by security teams at</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 text-gray-600">
-            <span className="text-lg font-semibold">Universities</span>
-            <span className="text-gray-700">•</span>
-            <span className="text-lg font-semibold">Corporate Campuses</span>
-            <span className="text-gray-700">•</span>
-            <span className="text-lg font-semibold">Research Facilities</span>
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-8 text-gray-600 px-4">
+            <span className="text-base sm:text-lg font-semibold whitespace-nowrap">Universities</span>
+            <span className="text-gray-700 hidden sm:inline">•</span>
+            <span className="text-base sm:text-lg font-semibold whitespace-nowrap">Corporate Campuses</span>
+            <span className="text-gray-700 hidden sm:inline">•</span>
+            <span className="text-base sm:text-lg font-semibold whitespace-nowrap">Research Facilities</span>
           </div>
         </div>
       </div>
