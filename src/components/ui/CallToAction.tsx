@@ -46,16 +46,16 @@ export function CallToAction() {
           <div className="mt-8 flex flex-wrap gap-4">
             <a
               href="mailto:contact@rayzrsole.com"
-              className="inline-flex cursor-pointer items-center gap-2 rounded-md border-b-[1.5px] border-orange-700 bg-linear-to-b from-orange-400 to-orange-500 px-5 py-3 text-sm font-medium tracking-wide text-white shadow-[0_0_14px_0_rgba(249,115,22,0.4)] transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-orange-500/30"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-md border-b-[1.5px] border-orange-700 bg-linear-to-b from-orange-400 to-orange-500 px-5 py-3 text-sm font-medium tracking-wide text-white shadow-[0_0_14px_0_rgba(249,115,22,0.4)] transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-orange-500/30 min-h-[44px] touch-manipulation"
             >
-              Get in touch
+              <span className="whitespace-nowrap">Get in touch</span>
               <RiArrowRightLine className="size-4" />
             </a>
             <a
               href="#projects"
-              className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-gray-700 bg-gray-800/50 px-5 py-3 text-sm font-medium text-gray-200 transition-all duration-200 hover:border-gray-600 hover:bg-gray-800"
+              className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-gray-700 bg-gray-800/50 px-5 py-3 text-sm font-medium text-gray-200 transition-all duration-200 hover:border-gray-600 hover:bg-gray-800 min-h-[44px] touch-manipulation"
             >
-              View our work
+              <span className="whitespace-nowrap">View our work</span>
             </a>
           </div>
         </div>

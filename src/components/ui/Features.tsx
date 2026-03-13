@@ -177,11 +177,11 @@ export default function Features() {
               fill="url(#diagonal-feature-pattern-1)"
             />
           </svg>
-          <div className="pointer-events-none h-104 p-10 select-none">
+          <div className="pointer-events-none h-64 sm:h-80 md:h-96 lg:h-104 p-4 sm:p-6 md:p-10 select-none">
             <div className="relative flex flex-col items-center justify-center">
               <Orbit
                 durationSeconds={40}
-                radiusPx={140}
+                radiusPx={100}
                 keepUpright
                 orbitingObjects={[
                   <div
@@ -275,7 +275,7 @@ export default function Features() {
                   </div>,
                 ]}
               >
-                <div className="relative flex h-48 w-48 items-center justify-center">
+                <div className="relative flex h-32 w-32 sm:h-40 sm:w-40 md:h-48 md:w-48 items-center justify-center">
                   <div className="rounded-full p-1 ring-1 ring-white/10">
                     <div className="relative z-10 flex size-20 items-center justify-center rounded-full bg-gray-900 ring-1 shadow-[inset_0px_-15px_20px_rgba(249,115,22,0.15),0_7px_10px_0_rgba(0,0,0,0.5)] ring-white/10">
                       <span className="text-lg font-bold text-orange-400">
@@ -341,12 +341,12 @@ export default function Features() {
               fill="url(#diagonal-feature-pattern-2)"
             />
           </svg>
-          <div className="relative h-[432px] w-[432px]">
+          <div className="relative h-64 w-64 sm:h-80 sm:w-80 md:h-96 md:w-96 lg:h-[432px] lg:w-[432px]">
             <svg
               id="grid"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              className="mask absolute size-[432px]"
+              className="mask absolute w-full h-full"
             >
               <path
                 className="stroke-gray-800"
@@ -433,7 +433,7 @@ export default function Features() {
               fill="url(#diagonal-feature-pattern-3)"
             />
           </svg>
-          <div className="pointer-events-none relative flex size-full h-104 items-center justify-center p-10 select-none">
+          <div className="pointer-events-none relative flex size-full h-64 sm:h-80 md:h-96 lg:h-104 items-center justify-center p-4 sm:p-6 md:p-10 select-none">
             <div className="relative">
               {[
                 { pos: "absolute top-24 left-24 z-20", Icon: RiNotification2Line },

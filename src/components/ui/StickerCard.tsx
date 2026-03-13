@@ -23,7 +23,7 @@ export const StickerCard = ({
           <Icon className="size-5 shrink-0 text-orange-500" />
           <h3 className="font-medium text-gray-100">{title}</h3>
         </div>
-        <p className="mt-2 text-gray-400 sm:text-sm">{description}</p>
+        <p className="mt-2 text-sm text-gray-400">{description}</p>
       </div>
     </div>
   </div>
